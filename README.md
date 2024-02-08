@@ -1,7 +1,7 @@
 # FastQHandler
 A collection of Python scripts designed for the efficient management of various FASTQ file formats.
 
-![FASTAhandler Logo](https://github.com/OZTaekOppa/FastaHandler/blob/main/images/FASTAhandler_Logo.png)
+![FastQHandler Logo](https://github.com/OZTaekOppa/FastQHandler/blob/main/images/FastQHandler_Logo.png)
 
 
 ## Brief Background
