@@ -1,15 +1,15 @@
-# FastqHandler
+# FastQHandler
 A collection of Python scripts designed for the efficient management of various FASTQ file formats.
 
 ![FASTAhandler Logo](https://github.com/OZTaekOppa/FastaHandler/blob/main/images/FASTAhandler_Logo.png)
 
 
 ## Brief Background
-**FastqHandler**, created by Hyungtaek Jung and the team at the [National Centre for Indigenous Genomics](https://ncig.anu.edu.au/) at [The Australian National University](https://www.anu.edu.au/), is a Python script suite for efficient FASTA file management. It boasts 17 work modules to ease input/output processes, covering various aspects of FASTA data analysis including post-processing and format conversion. Optimized for life science datasets, **FastqHandler** is a CLI application tested across different FASTA formats. Users should note that processing large datasets may require substantial computational resources on Linux, HPC or Cloud platforms.
+**FastQHandler**, created by Hyungtaek Jung and the team at the [National Centre for Indigenous Genomics](https://ncig.anu.edu.au/) at [The Australian National University](https://www.anu.edu.au/), is a Python script suite for efficient FASTA file management. It boasts 17 work modules to ease input/output processes, covering various aspects of FASTA data analysis including post-processing and format conversion. Optimized for life science datasets, **FastQHandler** is a CLI application tested across different FASTA formats. Users should note that processing large datasets may require substantial computational resources on Linux, HPC or Cloud platforms.
 
 
 ## Citation
-Hyungtaek Jung, Kirat Alreja, Kosar Hooshmand, Hadi Nazem-Bokaee, Hardip Patel: **FastaHandler**: An easy Python-based toolset for handling fasta files, [PLoS Comp Biol Submitted](https://www.biorxiv.org/XXXX).
+Hyungtaek Jung, Kirat Alreja, Kosar Hooshmand, Hadi Nazem-Bokaee, Hardip Patel: **FastQHandler**: An easy Python-based toolset for handling fasta files, [PLoS Comp Biol Submitted](https://www.biorxiv.org/XXXX).
 
 
 ## Contents:
@@ -25,13 +25,13 @@ Hyungtaek Jung, Kirat Alreja, Kosar Hooshmand, Hadi Nazem-Bokaee, Hardip Patel: 
 
 ## STABLE (version 1.0.1)
 - Release date: January 2024
-- **FastqHandler** is a standalone Python application equipped with 17 sub-modules for interactive FASTA file manipulation, available as open-source (see [LICENSE](https://github.com/OZTaekOppa/FastaHandler/blob/main/README.md#license)).
+- **FastQHandler** is a standalone Python application equipped with 17 sub-modules for interactive FASTA file manipulation, available as open-source (see [LICENSE](https://github.com/OZTaekOppa/FastaHandler/blob/main/README.md#license)).
 
 
 ## INSTALLATION
 - Access the program via [GitHub](https://github.com/OZTaekOppa/FASTAhandler)
 - Installation options include Bioconda or Python pip. For support, refer to [Issues on GitHub](https://github.com/OZTaekOppa/FastaHandler/issues).
-- **FastaHandler** requires no separate installation process.
+- **FastQHandler** requires no separate installation process.
 - Just clone this repository, and run
 ```
 git clone https://github.com/OZTaekOppa/FASTAhandler/
@@ -39,16 +39,16 @@ python3 {path}/fastahandler.py
 ```
 
 ## LICENSE
-**FastqHandler** is available under the MIT license and incorporates various open-source software. For detailed information on the integrated Python packages, modules, and libraries, and their specific applications within **FastaHandler**, please refer to the [manuscript](https://www.biorxiv.org/XXXX)
+**FastQHandler** is available under the MIT license and incorporates various open-source software. For detailed information on the integrated Python packages, modules, and libraries, and their specific applications within **FastaHandler**, please refer to the [manuscript](https://www.biorxiv.org/XXXX)
 
 
 ### Tested Datasets
 Please refer to the example dataset folder for sample data and usage demonstrations.
 
 ## GETTING STARTED
-**FastqHandler** is developed primarily in Python 3.9+ and Biopython and features 17 modules. It facilitates data input and output through a Command-Line Interface (CLI), ensuring smooth end-to-end file handling. To optimize the use of **FastaHandler**, users should prepare all necessary input files, such as FASTA and TXT formats, in advance.
+**FastQHandler** is developed primarily in Python 3.9+ and Biopython and features 17 modules. It facilitates data input and output through a Command-Line Interface (CLI), ensuring smooth end-to-end file handling. To optimize the use of **FastaHandler**, users should prepare all necessary input files, such as FASTA and TXT formats, in advance.
 
-![FASTAhandler Workflow](https://github.com/OZTaekOppa/FastaHandler/blob/main/images/FASTAhandler_Workflow.png)
+![FASTAhandler Workflow](https://github.com/OZTaekOppa/FastQHandler/blob/main/images/FastaHandler_Workflow.png)
 
 ### General Usage
 ```
@@ -84,7 +84,7 @@ Use <module> --help for module usage.
 	+ Requirement: The script of Python/bash requires a Python library.
 	+ Input: A multiline fasta file.
 	+ Output: A single-line fasta.
-	+ Example file: [mltseq2sl](https://github.com/OZTaekOppa/FastaHandler/blob/main/example_data/mltseq2sl.fa) in the "example_data" folder. 
+	+ Example file: [mltseq2sl](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/mltseq2sl.fa) in the "example_data" folder. 
 
 Example usage
 ```
@@ -476,7 +476,7 @@ python translatedna.py --input-seq test_dna.fasta --out output/folder --t 1 --me
 
 ## FAQ
 
-We encourage users to use the [Issues](https://github.com/OZTaekOppa/FastqHandler/issues).
+We encourage users to use the [Issues](https://github.com/OZTaekOppa/FastQHandler/issues).
 
 
 ## WIKI PAGE
@@ -491,4 +491,4 @@ Please see the GitHub page.
 
 ## COPYRIGHT
 
-The full **FastqHandler** is distributed under the MIT license. 
+The full **FastQHandler** is distributed under the MIT license. 
