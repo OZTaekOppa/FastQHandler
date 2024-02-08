@@ -5,7 +5,7 @@ A collection of Python scripts designed for the efficient management of various 
 
 
 ## Brief Background
-**FastaHandler**, created by Hyungtaek Jung and the team at the [National Centre for Indigenous Genomics](https://ncig.anu.edu.au/) at [The Australian National University](https://www.anu.edu.au/), is a Python script suite for efficient FASTA file management. It boasts 17 work modules to ease input/output processes, covering various aspects of FASTA data analysis including post-processing and format conversion. Optimized for life science datasets, **FastaHandler** is a CLI application tested across different FASTA formats. Users should note that processing large datasets may require substantial computational resources on Linux, HPC or Cloud platforms.
+**FastqHandler**, created by Hyungtaek Jung and the team at the [National Centre for Indigenous Genomics](https://ncig.anu.edu.au/) at [The Australian National University](https://www.anu.edu.au/), is a Python script suite for efficient FASTA file management. It boasts 17 work modules to ease input/output processes, covering various aspects of FASTA data analysis including post-processing and format conversion. Optimized for life science datasets, **FastqHandler** is a CLI application tested across different FASTA formats. Users should note that processing large datasets may require substantial computational resources on Linux, HPC or Cloud platforms.
 
 
 ## Citation
@@ -25,7 +25,7 @@ Hyungtaek Jung, Kirat Alreja, Kosar Hooshmand, Hadi Nazem-Bokaee, Hardip Patel: 
 
 ## STABLE (version 1.0.1)
 - Release date: January 2024
-- **FastaHandler** is a standalone Python application equipped with 17 sub-modules for interactive FASTA file manipulation, available as open-source (see [LICENSE](https://github.com/OZTaekOppa/FastaHandler/blob/main/README.md#license)).
+- **FastqHandler** is a standalone Python application equipped with 17 sub-modules for interactive FASTA file manipulation, available as open-source (see [LICENSE](https://github.com/OZTaekOppa/FastaHandler/blob/main/README.md#license)).
 
 
 ## INSTALLATION
@@ -39,14 +39,14 @@ python3 {path}/fastahandler.py
 ```
 
 ## LICENSE
-**FastaHandler** is available under the MIT license and incorporates various open-source software. For detailed information on the integrated Python packages, modules, and libraries, and their specific applications within **FastaHandler**, please refer to the [manuscript](https://www.biorxiv.org/XXXX)
+**FastqHandler** is available under the MIT license and incorporates various open-source software. For detailed information on the integrated Python packages, modules, and libraries, and their specific applications within **FastaHandler**, please refer to the [manuscript](https://www.biorxiv.org/XXXX)
 
 
 ### Tested Datasets
 Please refer to the example dataset folder for sample data and usage demonstrations.
 
 ## GETTING STARTED
-**FastaHandler** is developed primarily in Python 3.9+ and Biopython and features 17 modules. It facilitates data input and output through a Command-Line Interface (CLI), ensuring smooth end-to-end file handling. To optimize the use of **FastaHandler**, users should prepare all necessary input files, such as FASTA and TXT formats, in advance.
+**FastqHandler** is developed primarily in Python 3.9+ and Biopython and features 17 modules. It facilitates data input and output through a Command-Line Interface (CLI), ensuring smooth end-to-end file handling. To optimize the use of **FastaHandler**, users should prepare all necessary input files, such as FASTA and TXT formats, in advance.
 
 ![FASTAhandler Workflow](https://github.com/OZTaekOppa/FastaHandler/blob/main/images/FASTAhandler_Workflow.png)
 
@@ -476,7 +476,7 @@ python translatedna.py --input-seq test_dna.fasta --out output/folder --t 1 --me
 
 ## FAQ
 
-We encourage users to use the [Issues](https://github.com/OZTaekOppa/FastaHandler/issues).
+We encourage users to use the [Issues](https://github.com/OZTaekOppa/FastqHandler/issues).
 
 
 ## WIKI PAGE
@@ -491,4 +491,4 @@ Please see the GitHub page.
 
 ## COPYRIGHT
 
-The full **FastaHandler** is distributed under the MIT license. 
+The full **FastqHandler** is distributed under the MIT license. 
