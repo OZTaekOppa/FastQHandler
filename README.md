@@ -24,8 +24,8 @@ Hyungtaek Jung, Kirat Alreja, Kosar Hooshmand, Hadi Nazem-Bokaee, Hardip Patel: 
 
 
 ## STABLE (version 1.0.1)
-- Release date: January 2024
-- **FastQHandler** is a standalone Python application equipped with 17 sub-modules for interactive FASTA file manipulation, available as open-source (see [LICENSE](https://github.com/OZTaekOppa/FastaHandler/blob/main/README.md#license)).
+- Release date: February 2024
+- **FastQHandler** is a standalone Python application equipped with 17 sub-modules for interactive FASTQ file manipulation, available as open-source (see [LICENSE](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#license)).
 
 
 ## INSTALLATION
@@ -35,7 +35,7 @@ Hyungtaek Jung, Kirat Alreja, Kosar Hooshmand, Hadi Nazem-Bokaee, Hardip Patel: 
 - Just clone this repository, and run
 ```
 git clone https://github.com/OZTaekOppa/FastQHandler/
-python3 {path}/fastahandler.py
+python3 {path}/fastqhandler.py
 ```
 
 ## LICENSE
@@ -80,6 +80,53 @@ TranslateSequence       	| tls   	Find the translated sequences as a protein and
 
 Use <module> --help for module usage.
 ```
+
+### read_stats (rds)
+- To generate fastq statistics for a multi-line fastq
+ 	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A multi-line fastq file.
+	+ Output: A summary of fastq with its diverse statistics (e.g. sequence length, max length, N50, and more).
+
+Example usage
+```
+python3 read_stats.py --input-seq test_dna.fastq --out output_stats.csv --t 1 --mem 2
+```
++ It will accept both short and long-read FASTQ files.
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. read_stats.py:  Call read_stats module
+	1. python3 read_stats.py --help: Check help menu
+		+ --input-seq: Indicate an input multi-line fastq file and its path
+		+ --out: Indicate an output csv file with the summary of statistics
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
+### fq2fa_convert (qac)
+- To convert a fastq file as a fasta file
+ 	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A multi-line fastq file.
+	+ Output: A converted single-line fasta file with the same fastq header.
+
+Example usage
+```
+python3 fq2fa_convert.py --input-seq test_dna.fastq --out output_convert.fasta --t 1 --mem 2
+```
++ It will accept both short and long-read FASTQ files.
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fq2fa_convert.py:  Call fq2fa_convert module
+	1. python3 fq2fa_convert.py --help: Check help menu
+		+ --input-seq: Indicate an input multi-line fastq file and its path
+		+ --out: Indicate a converted output fasta file with the same fastq header
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
+
+
 
 ### multi2single (m2s)
 - To convert a multi-fasta (multiline) into a single-line fasta.
@@ -361,50 +408,7 @@ python3 extractptrn.py --input-seq test_dna1.fasta --input-pattern seq_pattern.t
 		+ --t: Specify thread numbers (integer only)
 		+ --mem: Specify memory numbers (integer only with Gb size)
 
-### eachfastats (efs)
-- To generate each line fasta statistic for a multi-line fasta
- 	+ Requirement: The script of Python/bash requires a Python library.
-	+ Input: A multi-line fasta file.
-	+ Output: A summary of single-line fasta with its corresponding sequence length.
-	+ Example file: [all_stat_asm.fa](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/all_stat_asm.fa) and [stat_asm_mlt_unlm.fa](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/stat_asm_mlt_unlm.fa) in the "example_data" folder.
 
-Example usage
-```
-python3 eachfastats.py --input-seq test_dna.fasta --out output_dna.txt --t 1 --mem 2
-```
-+ If your input FASTA file is in multi-line format, the script will automatically convert it to single-line format for processing (embedded pipeline).
-
-- Parameter explanation
-	1. python 3: Call python 3
-	1. eachfastats.py:  Call eachfastats module
-	1. python3 eachfastats.py --help: Check help menu
-		+ --input-seq: Indicate an input multi-line fasta file and its path
-		+ --out: Indicate an output text file with the sequence length
-		+ --t: Specify thread numbers (integer only)
-		+ --mem: Specify memory numbers (integer only with Gb size)
-
-### allfastats (afs)
-- To generate a summary of multi-line fasta statistics. 
- 	+ Requirement: The script of Python/bash requires a Python library.
-	+ Input: A multi-line fasta file.
-	+ Output: A summary of multi-line fasta with its diverse statistics (e.g. sequence length, GC content, N50, and more).
-  	+ Example file: [all_stat_asm.fa](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/all_stat_asm.fa) and [stat_asm_mlt_unlm.fa](https://github.com/OZTaekOppa/FastaHandler/blob/main/example_data/stat_asm_mlt_unlm.fa) in the "example_data" folder.
-
-Example usage
-```
-python3 allfastats.py --input-seq test_dna.fasta --out output_dna.txt --t 1 --mem 2
-```
-+ If your input FASTA file is in multi-line format, the script will automatically convert it to single-line format for processing (embedded pipeline).
-+ Both eachfastats and allfastasts modules use the same multi-line FASTA input. Eachfastats focuses on individual FASTA lines and their sequence lengths, while allfastasts provides a summary of assembly statistics, such as for genomes or transcriptomes.
-
-- Parameter explanation
-	1. python 3: Call python 3
-	1. allfastats.py:  Call allfastats module
-	1. python3 allfastats.py --help: Check help menu
-		+ --input-seq: Indicate an input multi-line fasta file and its path
-		+ --out: Indicate an output text file with the summary of statistics
-		+ --t: Specify thread numbers (integer only)
-		+ --mem: Specify memory numbers (integer only with Gb size)
 
 ### asmstatsunlm (mfs)
 - To generate a summary of multi-line fasta statistics for unlimited fasta files. An extended version of the allfastats for multiple fasta files. 
