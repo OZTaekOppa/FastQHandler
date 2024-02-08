@@ -125,6 +125,73 @@ python3 fq2fa_convert.py --input-seq test_dna.fastq --out output_convert.fasta -
 		+ --mem: Specify memory numbers (integer only with Gb size)
 
 
+### fqlen_filter (qlf)
+- To extract filtered IDs and their corresponding sequences (focused on sequence length)
+  	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file.
+	+ Output: A single-line fasta with extracted IDs and their corresponding sequences based on a sequence length filter.
+
+Example usage
+```
+python3 fqlen_filter.py --input-seq test_dna.fastq --filter-len 100 --out output_filtered.fastq --t 1 --mem 2
+```
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqlen_filter.py:  Call fqlen_filter module
+	1. python3 fqlen_filter.py --help: Check help menu
+	--input-seq: Indicate an input fastq file and its path
+	--filter-len: Indicate a sequence length to filter out
+	--out: Indicate an output ID filtered and extracted single-line fastq file and its path
+	--t: Specify thread numbers (integer only)
+	--mem: Specify memory numbers (integer only with Gb size)
+
+
+
+### fqqual_filter (qlf)
+- To extract filtered IDs and their corresponding sequences (focused on a read quality)
+  	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file.
+	+ Output: A single-line fasta with extracted IDs and their corresponding sequences based on a read quality.
+
+Example usage
+```
+python3 fqqual_filter.py --input-seq test_dna.fastq --filter-qual 15 --out output_filtered.fastq --t 1 --mem 2
+```
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqqual_filter.py:  Call fqqual_filter module
+	1. python3 fqqual_filter.py --help: Check help menu
+	--input-seq: Indicate an input fastq file and its path
+	--filter-qual: Indicate a read quality to filter out
+	--out: Indicate an output ID filtered and extracted single-line fastq file and its path
+	--t: Specify thread numbers (integer only)
+	--mem: Specify memory numbers (integer only with Gb size)
+
+
+### fqlenqual_filter (q2f)
+- To extract filtered IDs and their corresponding sequences (focused on a sequence length and read quality)
+  	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file.
+	+ Output: A single-line fasta with extracted IDs and their corresponding sequences based on a sequence length and read quality.
+
+Example usage
+```
+python3 fqlenqual_filter.py --input-seq test_dna.fastq --filter-qual 15 filter-len 100 --out output_filtered.fastq --t 1 --mem 2
+```
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqlenqual_filter.py:  Call fqqual_filter module
+	1. python3 fqlenqual_filter.py --help: Check help menu
+	--input-seq: Indicate an input fastq file and its path
+	--filter-qual: Indicate a read quality to filter out
+	--filter-len: Indicate a sequence length to filter out
+	--out: Indicate an output ID filtered and extracted single-line fastq file and its path
+	--t: Specify thread numbers (integer only)
+	--mem: Specify memory numbers (integer only with Gb size)
+
 
 
 
