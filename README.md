@@ -5,7 +5,7 @@ A collection of Python scripts designed for the efficient management of various 
 
 
 ## Brief Background
-**FastQHandler**, created by Hyungtaek Jung and the team at the [National Centre for Indigenous Genomics](https://ncig.anu.edu.au/) at [The Australian National University](https://www.anu.edu.au/), is a Python script suite for efficient FASTA file management. It boasts 17 work modules to ease input/output processes, covering various aspects of FASTA data analysis including post-processing and format conversion. Optimized for life science datasets, **FastQHandler** is a CLI application tested across different FASTA formats. Users should note that processing large datasets may require substantial computational resources on Linux, HPC or Cloud platforms.
+**FastQHandler**, created by Hyungtaek Jung and the team at the [National Centre for Indigenous Genomics](https://ncig.anu.edu.au/) at [The Australian National University](https://www.anu.edu.au/), is a Python script suite for efficient FASTQ file management. It boasts 17 work modules to ease input/output processes, covering various aspects of FASTQ data analysis including post-processing and format conversion. Optimized for life science datasets, **FastQHandler** is a CLI application tested across different FASTQ formats. Users should note that processing large datasets may require substantial computational resources on Linux, HPC or Cloud platforms.
 
 
 ## Citation
@@ -13,14 +13,14 @@ Hyungtaek Jung, Kirat Alreja, Kosar Hooshmand, Hadi Nazem-Bokaee, Hardip Patel: 
 
 
 ## Contents:
-+ [STABLE](https://github.com/OZTaekOppa/FASTAhandler/blob/main/README.md#stable-version-101)
-+ [INSTALLATION](https://github.com/OZTaekOppa/FASTAhandler/blob/main/README.md#installation)
-+ [LICENSE](https://github.com/OZTaekOppa/FASTAhandler/blob/main/README.md#license) 
-+ [GETTING STARTED](https://github.com/OZTaekOppa/FASTAhandler/blob/main/README.md#getting-started)
-+ [FAQ](https://github.com/OZTaekOppa/FASTAhandler/blob/main/README.md#faq)
-+ [WIKI PAGE](https://github.com/OZTaekOppa/FASTAhandler/blob/main/README.md#wiki-page)
-+ [AUTHORS](https://github.com/OZTaekOppa/FASTAhandler/blob/main/README.md#authors)
-+ [COPYRIGHT](https://github.com/OZTaekOppa/FASTAhandler/blob/main/README.md#copyright)
++ [STABLE](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#stable-version-101)
++ [INSTALLATION](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#installation)
++ [LICENSE](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#license) 
++ [GETTING STARTED](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#getting-started)
++ [FAQ](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#faq)
++ [WIKI PAGE](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#wiki-page)
++ [AUTHORS](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#authors)
++ [COPYRIGHT](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#copyright)
 
 
 ## STABLE (version 1.0.1)
