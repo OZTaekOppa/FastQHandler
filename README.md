@@ -42,9 +42,6 @@ python3 {path}/fastahandler.py
 **FastQHandler** is available under the MIT license and incorporates various open-source software. For detailed information on the integrated Python packages, modules, and libraries, and their specific applications within **FastQHandler**, please refer to the [manuscript](https://www.biorxiv.org/XXXX)
 
 
-### Tested Datasets
-Please refer to the example dataset folder for sample data and usage demonstrations.
-
 ## GETTING STARTED
 **FastQHandler** is developed primarily in Python 3.9+ and Biopython and features 17 modules. It facilitates data input and output through a Command-Line Interface (CLI), ensuring smooth end-to-end file handling. To optimize the use of **FastQHandler**, users should prepare all necessary input files, such as FASTQ and TXT formats, in advance.
 
