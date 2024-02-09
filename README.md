@@ -125,7 +125,7 @@ python3 fq2fa_convert.py --input-seq test_dna.fastq --out output_convert.fasta -
 		+ --mem: Specify memory numbers (integer only with Gb size)
 
 
-### fqlen_filter (qlf)
+### fqlen_filter (qlf) and fqlen_filter_only (qlo)
 - To extract filtered IDs and their corresponding sequences (focused on sequence length)
   	+ Requirement: The script of Python/bash requires a Python library.
 	+ Input: A fastq file.
@@ -133,8 +133,11 @@ python3 fq2fa_convert.py --input-seq test_dna.fastq --out output_convert.fasta -
 
 Example usage
 ```
-python3 fqlen_filter.py --input-seq test_dna.fastq --filter-len 100 --out output_filtered.fastq --t 1 --mem 2
+python3 fqlen_filter.py --input-seq test_dna.fastq --filter-len 100 --out ./ --t 1 --mem 2
 ```
+
++ The script will save sequences that pass and fail the filtering criteria into filter_passed.fastq and filter_failed.fastq, respectively.
++ To generate a single outcome of filter_passed.fastq, please use **fqlen_filter_only (qlo)** script with a specific output file name.
 
 - Parameter explanation
 	1. python 3: Call python 3
@@ -148,7 +151,7 @@ python3 fqlen_filter.py --input-seq test_dna.fastq --filter-len 100 --out output
 
 
 
-### fqqual_filter (qlf)
+### fqqual_filter (qqf) and fqqual_filter_only (qqo)
 - To extract filtered IDs and their corresponding sequences (focused on a read quality)
   	+ Requirement: The script of Python/bash requires a Python library.
 	+ Input: A fastq file.
@@ -156,9 +159,13 @@ python3 fqlen_filter.py --input-seq test_dna.fastq --filter-len 100 --out output
 
 Example usage
 ```
-python3 fqqual_filter.py --input-seq test_dna.fastq --filter-qual 15 --out output_filtered.fastq --t 1 --mem 2
+python3 fqqual_filter.py --input-seq test_dna.fastq --filter-qual 15 --out ./ --t 1 --mem 2
 ```
 
++ The script will save sequences that pass and fail the filtering criteria into filter_passed.fastq and filter_failed.fastq, respectively.
++ To generate a single outcome of filter_passed.fastq, please use **fqqual_filter_only (qqo)** script with a specific output file name.
+
+  
 - Parameter explanation
 	1. python 3: Call python 3
 	1. fqqual_filter.py:  Call fqqual_filter module
@@ -170,7 +177,7 @@ python3 fqqual_filter.py --input-seq test_dna.fastq --filter-qual 15 --out outpu
 	--mem: Specify memory numbers (integer only with Gb size)
 
 
-### fqlenqual_filter (q2f)
+### fqlenqual_filter (q2f) and fqlenqual_filter_only (q2o)
 - To extract filtered IDs and their corresponding sequences (focused on a sequence length and read quality)
   	+ Requirement: The script of Python/bash requires a Python library.
 	+ Input: A fastq file.
@@ -178,8 +185,11 @@ python3 fqqual_filter.py --input-seq test_dna.fastq --filter-qual 15 --out outpu
 
 Example usage
 ```
-python3 fqlenqual_filter.py --input-seq test_dna.fastq --filter-qual 15 filter-len 100 --out output_filtered.fastq --t 1 --mem 2
+python3 fqlenqual_filter.py --input-seq test_dna.fastq --filter-qual 15 filter-len 100 --out ./ --t 1 --mem 2
 ```
+
++ The script will save sequences that pass and fail the filtering criteria into filter_passed.fastq and filter_failed.fastq, respectively.
++ To generate a single outcome of filter_passed.fastq, please use **fqlenqual_filter_only (q2o)** script with a specific output file name.
 
 - Parameter explanation
 	1. python 3: Call python 3
@@ -224,8 +234,6 @@ python3 fqtrim.py --input-seq test_dna.fastq --trim-g 5 --trim-a 10 --trim-b 10 
  	+ Requirement: The script of Python/bash requires a Python library.
 	+ Input: A fastq file and a sequence to find.
 	+ Output: A csv with extracted IDs and their corresponding locations (start and end).
-	+ Example file: [header_id.txt](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/header_id.txt) and [idextloct.fa](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/idextloct.fa) in the "example_data" folder.
- 	+ 여기에 FQ header Example 있음. 확인요망.
 
 Example usage
 ```
@@ -237,13 +245,134 @@ python3 fqseq_find.py --input-seq test_dna.fastq --find-seq ATGCCGGTGAC --out ou
 	1. fqseq_find.py:  Call fqseq_find module
 	1. python3 fqseq_find.py --help: Check help menu
 		+ --input-seq: Indicate an input fastq file and its path
-		+ --find-seq: Indicate a sequence to find ID and header (without ">") name and pattern
-  + --out: Indicate an output ID matched and extracted single-line fasta file and its path
-		+ --start: Indicate a start position to extract (please use -1 value due to the python index)
-		+ --end: Indicate en end position to extract (please use -1 value due to the python index)
-		+ --out: Indicate an output ID matched and extracted single-line fasta file and its path
+		+ --find-seq: Indicate a sequence to find a pattern
+  		+ --out: Indicate an output ID matched and extracted fastq file and its path
 		+ --t: Specify thread numbers (integer only)
 		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
+### fqseq_repeat_find (qrf)
+- To extract matched IDs and their counts (focused on a matched and repeated sequence)
+ 	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file and a sequence to find.
+	+ Output: A matched fastq and a csv with extracted IDs and their counts.
+	+ Example file: [rpt_seq.txt](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/rpt_seq.txt) in the "example_data" folder.
+
+Example usage
+```
+python3 fqseq_repeat_find.py --input-seq test_dna.fastq --find-rpt-seq rpt_seq.txt --out ./ --t 1 --mem 2
+```
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqseq_repeat_find.py:  Call fqseq_repeat_find module
+	1. python3 fqseq_repeat_find.py --help: Check help menu
+		+ --input-seq: Indicate an input fastq file and its path
+		+ --find-rpt-seq: Indicate a repeat sequence file and its path to find
+  		+ --out: Indicate an output ID matched, count and extracted fastq file and its path (both cvs and fastq)
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
+### fqid_extract (qix)
+- To extract matched IDs and their corresponding sequences.
+ 	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file and a list of IDs.
+	+ Output: A fastq with extracted IDs and their corresponding sequences.
+ 	+ Example file: [id_extract.txt](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/id_extract.txt) in the "example_data" folder.
+
+Example usage
+```
+python3 fqid_extract.py --input-seq test_dna.fastq --find-id id_extract.txt --out output_extracted.fasta --t 1 --mem 2
+```
+	
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqid_extract.py:  Call fqid_extract module
+	1. python3 fqid_extract.py --help: Check help menu
+		+ --input-seq: Indicate an input fastq file and its path
+		+ --find-id: Indicate an input ID and header (without "@") text file and its path
+		+ --out: Indicate an output ID matched and extracted fastq file and its path
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
+### fqid_rename (qin)
+- To rename prefix IDs and headers from a fastq file.
+	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file.
+	+ Output: A fastq with a new prefix ID name.
+
+
+Example usage
+```
+python3 fqid_rename.py --input-seq test_dna.fastq --new-id FunNGS --out output_renamed.fastq --t 1 --mem 2
+```
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqid_rename.py:  Call fqid_rename module
+	1. python3 fqid_rename.py --help: Check help menu
+		+ --input-seq: Indicate an input fastq file and its path
+		+ --new-id: Indicate a new prefix ID/header name (accept both integer and strings but no space)
+		+ --out: Indicate an output renamed fastq file and its path
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
+### fqsubset (qsb)
+- To make a subset of data counting from beginning, end or randomly
+ 	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file.
+	+ Output: A subsetted fastq.
+
+Example usage
+```
+python3 fqsubset.py --input-seq test_dna.fastq --sbs-g 100 --sbs-a 100 --sbs-r 100 --out output_subset.fastq --t 1 --mem 2
+```
+
++ Please indicate one of the parameters to subset (-g, -a or -r). If not, a default parameter, "-r 100", will be applied.
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqsubset.py:  Call fqsubset module
+	1. python3 fqsubset.py --help: Check help menu
+		+ --input-seq: Indicate an input fastq file and its path
+	  	+ --trim-g: Indicate a read count to subset from the beginning 
+		+ --trim-a: Indicate a read count to subset from the end 
+		+ --trim-r: Indicate a read count randomly
+		+ --out: Indicate an output fastq file after subsetting
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
+### fqsubset_pe (qsp)
+- To make a subset of paired-end data (e.g. Illumina) counting from beginning, end or randomly
+ 	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A paired-end fastq file.
+	+ Output: A subsetted fastq.
+
+Example usage
+```
+python3 fqsubset_pe.py --input-seq1 test_r1.fastq --input-seq2 test_r2.fastq --sbs-g 100 --sbs-a 100 --sbs-r 100 --out ./ --t 1 --mem 2
+```
+
++ Please indicate one of the parameters to subset (-g, -a or -r). If not, a default parameter, "-r 100", will be applied.
++ The script will save sequences that two read pairs the subsetting criteria into subset_pe1.fastq and subset_pe2.fastq, respectively.
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqsubset.py:  Call fqsubset module
+	1. python3 fqsubset.py --help: Check help menu
+		+ --input-seq1: Indicate an input r1.fastq file and its path
+  		+ --input-seq2: Indicate an input r2.fastq file and its path
+	  	+ --trim-g: Indicate a read count to subset from the beginning 
+		+ --trim-a: Indicate a read count to subset from the end 
+		+ --trim-r: Indicate a read count randomly
+		+ --out: Indicate an output folder for read pairs of fastq after subsetting
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
 
 
 
