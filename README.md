@@ -374,6 +374,54 @@ python3 fqsubset_pe.py --input-seq1 test_r1.fastq --input-seq2 test_r2.fastq --s
 		+ --mem: Specify memory numbers (integer only with Gb size)
 
 
+### fqid_remove (qir)
+- To remove the same prefix IDs and headers from a fastq file.
+	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file.
+	+ Output: A fastq with a summary csv.
+
+
+Example usage
+```
+python3 fqid_remove.py --input-seq test_dna.fastq --out ./ --t 1 --mem 2
+```
+
++ The script will remove the same prefix IDs and headers if they are duplicated.
+  
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqid_remove.py:  Call fqid_remove module
+	1. python3 fqid_remove.py --help: Check help menu
+		+ --input-seq: Indicate an input fastq file and its path
+		+ --out: Indicate an output of non-duplicated fastq, csv and its path
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
+### fqseq_remove (qsr)
+- To remove the same sequence despite the discrepancy of IDs and headers from a fastq file.
+	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file.
+	+ Output: A fastq with a summary csv.
+
+
+Example usage
+```
+python3 fqseq_remove.py --input-seq test_dna.fastq --out ./ --t 1 --mem 2
+```
+
++ If they are duplicated, the script will remove the same sequence despite the discrepancy of IDs and headers if they are duplicated.
+  
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqseq_remove.py:  Call fqseq_remove module
+	1. python3 fqseq_remove.py --help: Check help menu
+		+ --input-seq: Indicate an input fastq file and its path
+		+ --out: Indicate an output of non-duplicated fastq, csv and its path
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
 
 
 
