@@ -5,7 +5,7 @@ A collection of Python scripts designed for the efficient management of various 
 
 
 ## Brief Background
-**FastQHandler**, created by Hyungtaek Jung and the team at the [National Centre for Indigenous Genomics](https://ncig.anu.edu.au/) at [The Australian National University](https://www.anu.edu.au/), is a Python script suite for efficient FASTQ file management. It boasts 17 work modules to ease input/output processes, covering various aspects of FASTQ data analysis including post-processing and format conversion. Optimized for life science datasets, **FastQHandler** is a CLI application tested across different FASTQ formats. Users should note that processing large datasets may require substantial computational resources on Linux, HPC or Cloud platforms.
+**FastQHandler**, created by Hyungtaek Jung and the team at the [National Centre for Indigenous Genomics](https://ncig.anu.edu.au/) at [The Australian National University](https://www.anu.edu.au/), is a Python script suite for efficient FASTQ file management. It boasts 23 work modules to ease input/output processes, covering various aspects of FASTQ data analysis including post-processing and format conversion. Optimized for life science datasets, **FastQHandler** is a CLI application tested across different FASTQ formats. Users should note that processing large datasets may require substantial computational resources on Linux, HPC or Cloud platforms.
 
 
 ## Citation
@@ -25,7 +25,7 @@ Hyungtaek Jung, Kirat Alreja, Kosar Hooshmand, Hadi Nazem-Bokaee, Hardip Patel: 
 
 ## STABLE (version 1.0.1)
 - Release date: February 2024
-- **FastQHandler** is a standalone Python application equipped with 17 sub-modules for interactive FASTQ file manipulation, available as open-source (see [LICENSE](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#license)).
+- **FastQHandler** is a standalone Python application equipped with 23 sub-modules for interactive FASTQ file manipulation, available as open-source (see [LICENSE](https://github.com/OZTaekOppa/FastQHandler/blob/main/README.md#license)).
 
 
 ## INSTALLATION
@@ -45,7 +45,7 @@ python3 {path}/fastqhandler.py
 ## GETTING STARTED
 **FastQHandler** is developed primarily in Python 3.9+ and Biopython and features 17 modules. It facilitates data input and output through a Command-Line Interface (CLI), ensuring smooth end-to-end file handling. To optimize the use of **FastQHandler**, users should prepare all necessary input files, such as FASTQ and TXT formats, in advance.
 
-![FASTAhandler Workflow](https://github.com/OZTaekOppa/FastQHandler/blob/main/images/FastaHandler_Workflow.png)
+![FastQHandler Workflow](https://github.com/OZTaekOppa/FastQHandler/blob/main/images/FastQHandler_Workflow.png)
 
 ### Tested FASTQ Files
 - Illumina Paired-End: EBI [SRRSRR26400271 NovoSeq 6000](https://www.ebi.ac.uk/ena/browser/view/SRX22106079) and [SRR26087471 Genome Analyzer](https://www.ebi.ac.uk/ena/browser/view/SRR26087471)
