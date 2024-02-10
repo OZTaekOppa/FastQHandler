@@ -82,14 +82,14 @@ Use <module> --help for module usage.
 ```
 
 ### fqread_stats (qrs)
-- To generate fastq statistics for a multi-line fastq
+- To generate fastq statistics for a fastq file
  	+ Requirement: The script of Python/bash requires a Python library.
 	+ Input: A fastq file.
 	+ Output: A summary of fastq with its diverse statistics (e.g. sequence length, max length, N50, and more).
 
 Example usage
 ```
-python3 fqread_stats.py --input-seq test_dna.fastq --out output_stats.csv --t 1 --mem 2
+python3 fqread_stats.py --input-seq test_dna.fq --out output_stats.csv --t 1 --mem 2
 ```
 + It will accept both short and long-read FASTQ files.
 
@@ -103,6 +103,28 @@ python3 fqread_stats.py --input-seq test_dna.fastq --out output_stats.csv --t 1 
 		+ --mem: Specify memory numbers (integer only with Gb size)
 
 
+### fqread_stats_unlim (qsu)
+- To generate fastq statistics for multiple fastq files
+ 	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: Multiple fastq files.
+	+ Output: A summary of fastq with its diverse statistics (e.g. sequence length, max length, N50, and more).
+
+Example usage
+```
+python3 fqread_stats_unlim.py --input-seqs test_dna1.fq test_dna2.fq test_dna3.fq test_dna4.fq test_dna5.fq --out ./ --t 1 --mem 2
+```
++ It will accept both short and long-read FASTQ files.
+
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqread_stats_unlim.py:  Call fqread_stats_unlim module
+	1. python3 fqread_stats_unlim.py --help: Check help menu
+		+ --input-seqs: Indicate multiple fastq files and theirs paths
+		+ --out: Indicate an output folder to save a csv file with the summary of statistics
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
+
+
 ### fq2fa_convert (qac)
 - To convert a fastq file as a fasta file
  	+ Requirement: The script of Python/bash requires a Python library.
@@ -111,7 +133,7 @@ python3 fqread_stats.py --input-seq test_dna.fastq --out output_stats.csv --t 1 
 
 Example usage
 ```
-python3 fq2fa_convert.py --input-seq test_dna.fastq --out output_convert.fasta --t 1 --mem 2
+python3 fq2fa_convert.py --input-seq test_dna.fq --out output_convert.fq --t 1 --mem 2
 ```
 + It will accept both short and long-read FASTQ files.
 
@@ -133,11 +155,11 @@ python3 fq2fa_convert.py --input-seq test_dna.fastq --out output_convert.fasta -
 
 Example usage
 ```
-python3 fqlen_filter.py --input-seq test_dna.fastq --filter-len 100 --out ./ --t 1 --mem 2
+python3 fqlen_filter.py --input-seq test_dna.fq --filter-len 100 --out ./ --t 1 --mem 2
 ```
 
-+ The script will save sequences that pass and fail the filtering criteria into filter_passed.fastq and filter_failed.fastq, respectively.
-+ To generate a single outcome of filter_passed.fastq, please use **fqlen_filter_only (qlo)** script with a specific output file name.
++ The script will save sequences that pass and fail the filtering criteria into filter_passed.fq and filter_failed.fq, respectively.
++ To generate a single outcome of filter_passed.fq, please use **fqlen_filter_only (qlo)** script with a specific output file name.
 
 - Parameter explanation
 	1. python 3: Call python 3
@@ -159,11 +181,11 @@ python3 fqlen_filter.py --input-seq test_dna.fastq --filter-len 100 --out ./ --t
 
 Example usage
 ```
-python3 fqqual_filter.py --input-seq test_dna.fastq --filter-qual 15 --out ./ --t 1 --mem 2
+python3 fqqual_filter.py --input-seq test_dna.fq --filter-qual 15 --out ./ --t 1 --mem 2
 ```
 
-+ The script will save sequences that pass and fail the filtering criteria into filter_passed.fastq and filter_failed.fastq, respectively.
-+ To generate a single outcome of filter_passed.fastq, please use **fqqual_filter_only (qqo)** script with a specific output file name.
++ The script will save sequences that pass and fail the filtering criteria into filter_passed.fq and filter_failed.fq, respectively.
++ To generate a single outcome of filter_passed.fq, please use **fqqual_filter_only (qqo)** script with a specific output file name.
 
   
 - Parameter explanation
@@ -185,11 +207,11 @@ python3 fqqual_filter.py --input-seq test_dna.fastq --filter-qual 15 --out ./ --
 
 Example usage
 ```
-python3 fqlenqual_filter.py --input-seq test_dna.fastq --filter-qual 15 filter-len 100 --out ./ --t 1 --mem 2
+python3 fqlenqual_filter.py --input-seq test_dna.fq --filter-qual 15 filter-len 100 --out ./ --t 1 --mem 2
 ```
 
-+ The script will save sequences that pass and fail the filtering criteria into filter_passed.fastq and filter_failed.fastq, respectively.
-+ To generate a single outcome of filter_passed.fastq, please use **fqlenqual_filter_only (q2o)** script with a specific output file name.
++ The script will save sequences that pass and fail the filtering criteria into filter_passed.fq and filter_failed.fq, respectively.
++ To generate a single outcome of filter_passed.fq, please use **fqlenqual_filter_only (q2o)** script with a specific output file name.
 
 - Parameter explanation
 	1. python 3: Call python 3
@@ -211,7 +233,7 @@ python3 fqlenqual_filter.py --input-seq test_dna.fastq --filter-qual 15 filter-l
 
 Example usage
 ```
-python3 fqtrim.py --input-seq test_dna.fastq --trim-g 5 --trim-a 10 --trim-b 10 --out output_trimmed.fastq --t 1 --mem 2
+python3 fqtrim.py --input-seq test_dna.fq --trim-g 5 --trim-a 10 --trim-b 10 --out output_trimmed.fq --t 1 --mem 2
 ```
 
 + Please indicate one of the parameters to trim (-g, -a or -b). If not, a default parameter, "-b 10", will be applied.
@@ -237,7 +259,7 @@ python3 fqtrim.py --input-seq test_dna.fastq --trim-g 5 --trim-a 10 --trim-b 10 
 
 Example usage
 ```
-python3 fqseq_find.py --input-seq test_dna.fastq --find-seq ATGCCGGTGAC --out output_found.csv --t 1 --mem 2
+python3 fqseq_find.py --input-seq test_dna.fq --find-seq ATGCCGGTGAC --out output_found.csv --t 1 --mem 2
 ```
 
 - Parameter explanation
@@ -260,7 +282,7 @@ python3 fqseq_find.py --input-seq test_dna.fastq --find-seq ATGCCGGTGAC --out ou
 
 Example usage
 ```
-python3 fqseq_repeat_find.py --input-seq test_dna.fastq --find-rpt-seq rpt_seq.txt --out ./ --t 1 --mem 2
+python3 fqseq_repeat_find.py --input-seq test_dna.fq --find-rpt-seq rpt_seq.txt --out ./ --t 1 --mem 2
 ```
 
 - Parameter explanation
@@ -283,7 +305,7 @@ python3 fqseq_repeat_find.py --input-seq test_dna.fastq --find-rpt-seq rpt_seq.t
 
 Example usage
 ```
-python3 fqid_extract.py --input-seq test_dna.fastq --find-id id_extract.txt --out output_extracted.fasta --t 1 --mem 2
+python3 fqid_extract.py --input-seq test_dna.fq --find-id id_extract.txt --out output_extracted.fasta --t 1 --mem 2
 ```
 	
 - Parameter explanation
@@ -306,7 +328,7 @@ python3 fqid_extract.py --input-seq test_dna.fastq --find-id id_extract.txt --ou
 
 Example usage
 ```
-python3 fqid_rename.py --input-seq test_dna.fastq --new-id FunNGS --out output_renamed.fastq --t 1 --mem 2
+python3 fqid_rename.py --input-seq test_dna.fq --new-id FunNGS --out output_renamed.fq --t 1 --mem 2
 ```
 
 - Parameter explanation
@@ -328,7 +350,7 @@ python3 fqid_rename.py --input-seq test_dna.fastq --new-id FunNGS --out output_r
 
 Example usage
 ```
-python3 fqsubset.py --input-seq test_dna.fastq --sbs-g 100 --sbs-a 100 --sbs-r 100 --out output_subset.fastq --t 1 --mem 2
+python3 fqsubset.py --input-seq test_dna.fq --sbs-g 100 --sbs-a 100 --sbs-r 100 --out output_subset.fq --t 1 --mem 2
 ```
 
 + Please indicate one of the parameters to subset (-g, -a or -r). If not, a default parameter, "-r 100", will be applied.
@@ -354,18 +376,18 @@ python3 fqsubset.py --input-seq test_dna.fastq --sbs-g 100 --sbs-a 100 --sbs-r 1
 
 Example usage
 ```
-python3 fqsubset_pe.py --input-seq1 test_r1.fastq --input-seq2 test_r2.fastq --sbs-g 100 --sbs-a 100 --sbs-r 100 --out ./ --t 1 --mem 2
+python3 fqsubset_pe.py --input-seq1 test_r1.fq --input-seq2 test_r2.fq --sbs-g 100 --sbs-a 100 --sbs-r 100 --out ./ --t 1 --mem 2
 ```
 
 + Please indicate one of the parameters to subset (-g, -a or -r). If not, a default parameter, "-r 100", will be applied.
-+ The script will save sequences that two read pairs the subsetting criteria into subset_pe1.fastq and subset_pe2.fastq, respectively.
++ The script will save sequences that two read pairs the subsetting criteria into subset_pe1.fq and subset_pe2.fq, respectively.
 
 - Parameter explanation
 	1. python 3: Call python 3
 	1. fqsubset.py:  Call fqsubset module
 	1. python3 fqsubset.py --help: Check help menu
-		+ --input-seq1: Indicate an input r1.fastq file and its path
-  		+ --input-seq2: Indicate an input r2.fastq file and its path
+		+ --input-seq1: Indicate an input r1.fq file and its path
+  		+ --input-seq2: Indicate an input r2.fq file and its path
 	  	+ --trim-g: Indicate a read count to subset from the beginning 
 		+ --trim-a: Indicate a read count to subset from the end 
 		+ --trim-r: Indicate a read count randomly
@@ -383,7 +405,7 @@ python3 fqsubset_pe.py --input-seq1 test_r1.fastq --input-seq2 test_r2.fastq --s
 
 Example usage
 ```
-python3 fqid_remove.py --input-seq test_dna.fastq --out ./ --t 1 --mem 2
+python3 fqid_remove.py --input-seq test_dna.fq --out ./ --t 1 --mem 2
 ```
 
 + The script will remove the same prefix IDs and headers if they are duplicated.
@@ -407,10 +429,10 @@ python3 fqid_remove.py --input-seq test_dna.fastq --out ./ --t 1 --mem 2
 
 Example usage
 ```
-python3 fqseq_remove.py --input-seq test_dna.fastq --out ./ --t 1 --mem 2
+python3 fqseq_remove.py --input-seq test_dna.fq --out ./ --t 1 --mem 2
 ```
 
-+ If they are duplicated, the script will remove the same sequence despite the discrepancy of IDs and headers if they are duplicated.
++ If they are duplicated, the script will remove the same sequence despite the discrepancy of IDs and headers.
   
 - Parameter explanation
 	1. python 3: Call python 3
@@ -422,12 +444,52 @@ python3 fqseq_remove.py --input-seq test_dna.fastq --out ./ --t 1 --mem 2
 		+ --mem: Specify memory numbers (integer only with Gb size)
 
 
+### fqdup_count (qdc)
+- To find and count the same IDs/headers and the same sequence despite the discrepancy of IDs/headers from a fastq file.
+	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file.
+	+ Output: A fastq with a summary csv.
+		- dupid_count.csv: The same IDs and headers
+  		- dupsep_count.csv: The same sequence despite the discrepancy of IDs and headers
+
+
+Example usage
+```
+python3 fqdup_count.py --input-seq test_dna.fq --out ./ --t 1 --mem 2
+```
+
++ If they are duplicated (IDs, headers and sequences), the script will find and count the IDs/headers and their occurrence.
+  
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqdup_count.py:  Call fqdup_count module
+	1. python3 fqdup_count.py --help: Check help menu
+		+ --input-seq: Indicate an input fastq file and its path
+		+ --out: Indicate an output of csv and its path 
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
 
 
 
+### fqrev_complt (rcp)
+- To make a reverse complement sequence
+ 	+ Requirement: The script of Python/bash requires a Python library.
+	+ Input: A fastq file.
+	+ Output: A reverse complement fastq.
 
+Example usage
+```
+python3 fqrev_complt.py --input-seq test_dna.fq --out output_revcomplt.fq --t 1 --mem 2
+```
 
-
+- Parameter explanation
+	1. python 3: Call python 3
+	1. fqrev_complt.py:  Call fqrev_complt module
+	1. python3 fqrev_complt.py --help: Check help menu
+		+ --input-seq: Indicate an input fastq file and its path
+		+ --out: Indicate a reverse complement converted output fastq file and its path
+		+ --t: Specify thread numbers (integer only)
+		+ --mem: Specify memory numbers (integer only with Gb size)
 
 
 
@@ -453,29 +515,7 @@ python3 multi2single.py --input-seq test_dna.fasta --out test_output_sl.fasta --
 		+ --t: Specify thread numbers (integer only)
 		+ --mem: Specify memory numbers (integer only only with Gb size)
 
-### renameid (rid)
-- To rename prefix IDs and headers from a single-line fasta.
-	+ Requirement: The script of Python/bash requires a Python library.
-	+ Input: A fasta file.
-	+ Output: A single-line fasta with a new prefix ID name.
- 	+ Example file: [renameid_seq.fa](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/renameid_seq.fa) in the "example_data" folder. 
 
-
-Example usage
-```
-python3 renameid.py --input-seq test_dna.fasta --new-name FunNGS --out output_reN.fasta --t 1 --mem 2
-```
-+ Use the multi2single module first if your input FASTA file isn't in single-line format.
-
-- Parameter explanation
-	1. python 3: Call python 3
-	1. renameid.py:  Call renameid module
-	1. python3 renameid.py --help: Check help menu
-		+ --input-seq: Indicate an input single-line fasta file and its path
-		+ --new-name: Indicate a new prefix ID/header name (accept both integer and strings but no space)
-		+ --out: Indicate an output renamed single-line fasta file and its path
-		+ --t: Specify thread numbers (integer only)
-		+ --mem: Specify memory numbers (integer only with Gb size)
 
 ### prfxrename (prn)
 - To rename prefix IDs and headers from a single-line fasta with a user's input text file.
@@ -527,28 +567,7 @@ python3 prfxselrename.py --input-seq test_dna.fasta --input-id new_ids.txt --out
 		+ --t: Specify thread numbers (integer only)
 		+ --mem: Specify memory numbers (integer only with Gb size)
 
-### idextract (idx)
-- To extract matched IDs and their corresponding sequences.
- 	+ Requirement: The script of Python/bash requires a Python library.
-	+ Input: A fasta file and a list of IDs.
-	+ Output: A single-line fasta with extracted IDs and their corresponding sequences.
- 	+ Example file: [header_id.txt](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/header_id.txt) and [idextract.fa](https://github.com/OZTaekOppa/FastaHandler/blob/main/example_data/idextract.fa) in the "example_data" folder.
 
-Example usage
-```
-python3 idextract.py --input-seq test_dna.fasta --input-header header_id.txt --out output_extracted.fasta --t 1 --mem 2
-```
-+ If your input FASTA file is in multi-line format, the script will automatically convert it to single-line format for processing (embedded pipeline).
-	
-- Parameter explanation
-	1. python 3: Call python 3
-	1. idextract.py:  Call idextract module
-	1. python3 idextract.py --help: Check help menu
-		+ --input-seq: Indicate an input single-line fasta file and its path
-		+ --input-header: Indicate an input ID and header (without ">") text file and its path
-		+ --out: Indicate an output ID matched and extracted single-line fasta file and its path
-		+ --t: Specify thread numbers (integer only)
-		+ --mem: Specify memory numbers (integer only with Gb size)
 
 ### idextloct (iel)
 - To extract matched IDs, locations and their corresponding sequences (focused on a single ID)
@@ -598,27 +617,7 @@ python3 idextloctmlt.py --input-seq test_dna.fasta --input-extract input_extract
 	--t: Specify thread numbers (integer only)
 	--mem: Specify memory numbers (integer only with Gb size)
 
-### revcomplt (rcp)
-- To make a reverse complement sequence
- 	+ Requirement: The script of Python/bash requires a Python library.
-	+ Input: A fasta file.
-	+ Output: A reverse complement single-line fasta.
- 	+ Example file: [revscomplt.fa](https://github.com/OZTaekOppa/FastQHandler/blob/main/example_data/revscomplt.fa) in the "example_data" folder.
 
-Example usage
-```
-python3 revcomplt.py --input-seq test_dna.fasta --out output_revctest.fasta --t 1 --mem 2
-```
-+ If your input FASTA file is in multi-line format, the script will automatically convert it to single-line format for processing (embedded pipeline).
-
-- Parameter explanation
-	1. python 3: Call python 3
-	1. revcomplement.py:  Call revcomplt module
-	1. python3 revcomplt.py --help: Check help menu
-		+ --input-seq: Indicate an input single-line fasta file and its path
-		+ --out: Indicate a reverse complement converted output single-line fasta file and its path
-		+ --t: Specify thread numbers (integer only)
-		+ --mem: Specify memory numbers (integer only with Gb size)
 
 ### findcntdupl (fcd)
 - To find and count the duplicated IDs and sequences from a multi-fasta file
